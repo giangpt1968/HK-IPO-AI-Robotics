@@ -211,4 +211,30 @@ Cập nhật format hiển thị của Axera v1 để khớp với Edge Medical 
 
 ---
 
+## Session 5: Push to GitHub
+
+### Repository
+- **URL:** https://github.com/giangpt1968/HK-IPO-AI-Robotics
+- **Visibility:** Private
+
+### Files pushed
+| File | Mô tả |
+|------|-------|
+| `README.md` | Project overview |
+| `.gitignore` | Ignore rules |
+| `DEVLOG/` | 3 session logs |
+| `IPO_Analysis_Template_Edge_Medical_*.ipynb` | Template v1-v4 |
+| `IPO_Analysis_Axera_*.ipynb` | Axera v1, v2 |
+| `IPO_Analysis_Biren_*.ipynb` | Biren v1 |
+| `IPO_Analysis_MiniMax_*.ipynb` | MiniMax v1 |
+| `IPO_Analysis_Zhipu_*.ipynb` | Zhipu v1 |
+
+### Commit
+```
+Initial commit: HK IPO AI & Robotics Analysis
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+```
+
+---
+
 *Session ended: 2026-02-20*
