@@ -175,4 +175,60 @@ Final grep confirms zero matches for: 43.24, clinical, NMPA, surgical, Edge Medi
 ### 16 Cornerstone Investors ($185M total)
 WILL Semiconductor (OmniVision) $35M, Youngor $35M, JSC International $15M, Desay SV $15M, NGS Super $10M, Factorial Master Fund $10M, Joyson Electronics $10M, Hel Ved $8M, Valliance $8M, Mingshan Capital $8M, Jupiter Global $5M, GRANITE ASIA IX $5M, Haowell+CICC $5M, NonaVerse $5M, Qingdao Guanlan+Guotai Junan $5M, Jinyi Capital $5M
 
+---
+
+## Session 8: MiniMax v1 - Financial Data Fix + TBD Fill
+
+### Issues Found & Fixed
+
+**Financial Data (Cell 10):**
+- 9M2024 was all NaN → filled: Revenue $19.45M, Gross Profit $0.5M, Net Loss -$304M
+- Gross profit was NaN for all periods → filled from prospectus:
+  - FY2023: -$0.85M (margin -24.7%)
+  - FY2024: $3.72M (margin 12.2%)
+  - 9M2025: $12.45M (margin 23.3%)
+- Unit labels said "RMB" → fixed to "USD" (MiniMax reports in USD)
+
+**Financial Chart (Cell 11):**
+- Chart titles/axes said "Triệu RMB" → fixed to "Triệu USD"
+- Added NaN filtering for clean bar charts
+
+**Price & Volume Chart (Cells 29-31):**
+- yfinance returned old stock data (pre-IPO contamination from previous 0100.HK listing)
+- **Replaced yfinance with akshare** (`ak.stock_hk_hist`) - East Money/Tencent Finance source
+- Fixed x-axis date formatting with `matplotlib.dates`
+- Fixed stock code display: "0100.HK" → "00100.HK" throughout notebook
+
+**IPO Terms (Cell 13):**
+- Pre-IPO shares: ~280.1M, Post-IPO: ~309.3M (dilution ~10.4%)
+- Free float: only ~5.4% at listing
+
+**KPIs (Cell 19) - All TBDs filled:**
+
+| Metric | FY2023 | FY2024 | 9M2025 |
+|--------|--------|--------|--------|
+| MAU (avg) | 3.14M | 19.1M | 27.6M |
+| Paying users | 119.7K | 650.3K | 1,771.6K |
+| ARPU | $6 | $11 | $15 |
+| Enterprise customers | ~100 | ~700 | ~2,500 |
+| Gross margin | -24.7% | 12.2% | 23.3% |
+| Inference cost/token | Baseline | -45% YoY | Tiếp tục giảm |
+| API tokens/day | N/A | N/A | >1T tokens |
+| Revenue overseas % | N/A | ~70% | 73.1% |
+
+**Valuation (Cell 21) - All TBDs filled:**
+- Cash: $1.05B pre-IPO + $515M net proceeds = $1.57B total
+- Burn rate: ~$62M/quarter (adjusted, excl. SBC)
+- Cash runway: ~6+ years
+- EV/Sales: ~69x (annualized) or ~27x (forward 2026E)
+- Peer: Zhipu AI ~50x EV/Sales added
+
+**Verdict (Cell 25) - All TBDs filled:**
+- Lock-up: cornerstone 08/07/2026, pre-IPO 09/01/2027, founder 09/01/2028
+- FY2025 earnings: 02/03/2026
+- Buy zone: quanh lock-up expiry nếu giảm 20-30%
+- Gross margin target: hướng >30% (hiện 23.3%)
+
+### Total Changes: 33 TBDs filled + 25 data fixes + akshare migration
+
 *Session ended: 2026-02-28*
