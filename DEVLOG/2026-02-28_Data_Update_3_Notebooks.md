@@ -134,4 +134,45 @@ Created comprehensive update scripts:
 ### Verification
 Final grep confirms zero matches for: 43.24, clinical, NMPA, surgical, Edge Medical, 02675, MicroPort, Intuitive Surgical, vật tư tiêu hao, hệ thống mới lắp đặt
 
+---
+
+## Session 7: Axera v2 Data Verification & Fix
+
+### Issues Found & Fixed
+
+| Cell | Issue | Fix |
+|------|-------|-----|
+| **Cell 1** | Gross margin ~30% (wrong) | Changed to ~21-26% (verified from prospectus) |
+| **Cell 1** | EV/Sales ~6x (wrong) | Changed to ~32x (HKD 16.58B / RMB 472.9M) |
+| **Cell 10** | Gross profit values wrong | Recalculated from verified margins: 25.9%, 25.7%, 21.0%, 21.2% |
+| **Cell 11** | Chart divided by 1e6 (data already in millions) | Removed /1e6 - values now display correctly |
+| **Cell 11** | Comments referenced "1H2025" | Fixed to "9M2025" |
+| **Cell 13** | Use of proceeds 45/25/15/15 (wrong) | Fixed to 60/15/5/10/10 per prospectus |
+| **Cell 15** | Only 2 cornerstone investors ($70M) | Added all 16 investors ($185M total) |
+| **Cell 19** | Black Sesame market share "~80%" | Fixed to ~5% (realistic) |
+| **Cell 21** | IPO proceeds used 1,116.6M (wrong) | Fixed to 2,790M HKD net proceeds |
+| **Cell 21** | Burn rate from "1H2025" 89M (wrong) | Fixed to 9M2025 855.7M / 3 quarters |
+| **Cell 21** | Gross margin "~63%" in peer table | Fixed to ~21% |
+| **Cell 21** | EV/Sales "10-15x" in peer table | Fixed to ~32x |
+
+### Verified Financial Data (from prospectus)
+
+| Period | Revenue (RMB) | Gross Margin | Net Loss (RMB) |
+|--------|--------------|-------------|----------------|
+| FY2022 | 50.2M | 25.9% | -611.6M |
+| FY2023 | 230.1M | 25.7% | -743.1M |
+| FY2024 | 472.9M | 21.0% | -904.2M |
+| 9M2024 | 254M | ~21% | -691M |
+| 9M2025 | 269M | 21.2% | -856M |
+
+### Use of Proceeds (from prospectus)
+- 60% Technology platform optimization & new products
+- 15% New technology R&D
+- 5% Sales expansion
+- 10% M&A / acquisitions
+- 10% Working capital
+
+### 16 Cornerstone Investors ($185M total)
+WILL Semiconductor (OmniVision) $35M, Youngor $35M, JSC International $15M, Desay SV $15M, NGS Super $10M, Factorial Master Fund $10M, Joyson Electronics $10M, Hel Ved $8M, Valliance $8M, Mingshan Capital $8M, Jupiter Global $5M, GRANITE ASIA IX $5M, Haowell+CICC $5M, NonaVerse $5M, Qingdao Guanlan+Guotai Junan $5M, Jinyi Capital $5M
+
 *Session ended: 2026-02-28*
