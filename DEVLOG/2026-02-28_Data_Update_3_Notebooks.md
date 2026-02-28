@@ -67,4 +67,29 @@ Cả 3 notebooks dùng chung dữ liệu Edge Medical:
 
 ---
 
+---
+
+## Axera v1 & v2: Data Verification & Fix
+
+### Lỗi phát hiện khi verify với prospectus
+
+| Thông số | Notebook (SAI) | Prospectus (ĐÚNG) |
+|----------|---------------|-------------------|
+| **Năm thành lập** | 2017 | **2019** |
+| **Revenue FY2022** | RMB 85M | **RMB 50.2M** |
+| **Revenue FY2023** | RMB 180M | **RMB 230.1M** |
+| **Revenue FY2024** | RMB 340M | **RMB 472.9M** |
+| **Net Loss FY2022** | -RMB 350M | **-RMB 611.6M** |
+| **Net Loss FY2023** | -RMB 550M | **-RMB 743.1M** |
+| **Net Loss FY2024** | -RMB 920M | **-RMB 904.2M** |
+| **OmniVision** | $100M | **$35M** |
+| **Youngor** | $85M | **$35M** |
+| **Cornerstone count** | 2 investors | **16 investors** |
+
+### Files fixed
+- `IPO_Analysis_Axera_00600HK_v1.ipynb` - 4 cells
+- `IPO_Analysis_Axera_00600HK_v2.ipynb` - 17 fixes + 1 markdown
+
+---
+
 *Session ended: 2026-02-28*
