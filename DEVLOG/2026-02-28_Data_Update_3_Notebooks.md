@@ -17,7 +17,7 @@ Cả 3 notebooks dùng chung dữ liệu Edge Medical:
 | **IPO Date** | 08/01/2026 | 02/01/2026 | 09/01/2026 | 08/01/2026 |
 | **Proceeds** | $144M | $717M | $619M | $558M |
 | **Market Cap** | $2.15B | $6.0B | $6.6B | $6.6B |
-| **Revenue FY24** | RMB 160M | RMB 336.8M | $30.5M | RMB 312M |
+| **Revenue FY24** | RMB 160M | RMB 3,368M | $30.5M | RMB 312M |
 | **Founder** | N/A | Zhang Wen | Yan Junjie | Tang Jie |
 | **Cornerstone** | Tencent/ADIA | 23 investors ($372M) | 14 investors ($350M) | 11 investors (HKD 2.98B) |
 
@@ -29,7 +29,7 @@ Cả 3 notebooks dùng chung dữ liệu Edge Medical:
 - **Founded:** Sep 2019, by Zhang Wen (Ex-SenseTime President)
 - **IPO:** Jan 2, 2026 @ HKD 19.60, raised $717M
 - **Day 1:** +75.8% (close HKD 34.46), retail oversubscribed 2,347x
-- **Financials:** Revenue RMB 336.8M (FY24), Net Loss -RMB 1.54B
+- **Financials:** Revenue RMB 3,368M (FY24, +443% YoY), Net Loss -RMB 1.54B
 - **Products:** BR100 GPU (7nm, >1 PFLOPS FP16), BR104
 - **Risk:** US Entity List (Oct 2023)
 - **Pre-IPO funding:** ~$1.2B (11 rounds), Qiming, IDG, Hillhouse
@@ -91,5 +91,47 @@ Cả 3 notebooks dùng chung dữ liệu Edge Medical:
 - `IPO_Analysis_Axera_00600HK_v2.ipynb` - 17 fixes + 1 markdown
 
 ---
+
+---
+
+## Session 6: Steps 1-10 Full Data Update
+
+### Problem
+Cells 0-1 (header/summary) were updated in Session 5, but Steps 1-10 (Cells 6-29) still contained Edge Medical template data:
+- IPO price 43.24 throughout
+- Medical terminology (clinical validation, surgical, NMPA)
+- Wrong financial data, cornerstone investors, products, risks
+
+### Solution
+Created comprehensive update scripts:
+1. `_update_steps_all.py` - Updated cells 6, 8, 10, 13, 15, 17, 19, 23, 27, 29 (70 changes)
+2. `_fix_cell13.py` - Regex-based fix for Cell 13 IPO terms (whitespace mismatch)
+3. Global 43.24 replacement in markdown cells and outputs
+4. NaN-safe chart code fix for Biren/Zhipu Cell 13
+
+### Cells Updated per Notebook
+
+| Cell | Content | Changes |
+|------|---------|---------|
+| 2 | Methodology markdown | Replaced 43.24 with correct IPO price |
+| 6 | Step 1 - Company Overview | Company name, sector, founded, products |
+| 8 | Step 2 - Financials | Revenue, losses, margins, growth rates |
+| 10 | Step 3 - Growth Metrics | KPIs, TAM, market position |
+| 13 | Step 4 - IPO Terms | Price, proceeds, use of funds, shares |
+| 15 | Step 5 - Pre-IPO Funding | Rounds, investors, valuation history |
+| 17 | Step 6 - Cornerstone | Investor names, amounts, lock-up |
+| 19 | Step 7 - Day 1 Performance | Returns, oversubscription, volume |
+| 23 | Step 8 - Competitive | Peers, moat, regulatory landscape |
+| 27 | Step 9 - KPIs | Tracking metrics for each company |
+| 29 | Step 10 - Verdict | Final assessment and price targets |
+
+### Key Data Corrections
+- **Biren revenue** was 10x wrong: RMB 336.8M -> RMB 3,368M (FY24)
+- All medical terminology replaced with AI-specific terms
+- NaN-unsafe `v*100` fixed to `(v * 100 if pd.notna(v) else np.nan)`
+- Output cells cleaned of stale medical references
+
+### Verification
+Final grep confirms zero matches for: 43.24, clinical, NMPA, surgical, Edge Medical, 02675, MicroPort, Intuitive Surgical, vật tư tiêu hao, hệ thống mới lắp đặt
 
 *Session ended: 2026-02-28*

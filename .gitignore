@@ -28,3 +28,5 @@ env/
 *.tmp
 *.temp
 *.log
+_*.py
+_*_dump.txt
